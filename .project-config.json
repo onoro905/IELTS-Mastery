@@ -1,0 +1,43 @@
+{
+  "build_command": "pnpm run build",
+  "capabilities": [
+    "server",
+    "db",
+    "user"
+  ],
+  "dev_command": "pnpm run dev",
+  "env_vars": {
+    "DATABASE_URL": "mysql://PBZhQYUaTb7GegB.root:Ny6kg8q2xywcEYm2W1v0@gateway06.us-east-1.prod.aws.tidbcloud.com:4000/PXRteZYPVhgT7Fu6yMkmNR?ssl={\"rejectUnauthorized\":true}"
+  },
+  "experiments": [
+    "no_db_push"
+  ],
+  "git_remote": {
+    "repo_url": "s3://vida-prod-gitrepo/webdev-git/310519663049360396/PXRteZYPVhgT7Fu6yMkmNR",
+    "access_key_id": "ASIAZV3A2ECZIN6LMI3U",
+    "secret_access_key": "WFoPb8zkufhfMjLsP6K+pbYaOkPq6U/tGEbZ5bpz",
+    "session_token": "IQoJb3JpZ2luX2VjEDEaCXVzLWVhc3QtMSJHMEUCIALow/5VwBQkYz1TLWuBuepOtD+aoQJJ4kf+bBmQdjeVAiEAkanyvo0esGK9Pk2eLke5gq5rXUEnGC0UnGWPktBMuwgq/wMI+f//////////ARAEGgw2NjUzODYwOTg4NjYiDGtzeCC3hRRYfcpAUyrTA+Hq+e3bxAl5vOMvtJWmq9z6k3lhfRjwoWY0UNeOG19OeR/d1J4E8azHFoZXZphTYQPwLbelb016ahAJ7QJFkdgkH+oosLktIoFVkk4bkKKlklzwZ6Zope947WdYEiq28n4gSrlK/hHSOLRnChAiv3goSCpNBTfxzNnlEH/AAgsxhICv7vGHj0a6rYIXPZg68gLdSteauZHVvmuQ3TVJdu7BSVJDTQ9f62qrS8aj9kH6clIehPnYW4fhU3juBDYOxCiuI+jvIOotRNwKEuNXVw5hitYWeFKBoy+KUxSVR2TzqAyxObUCCRghgf3Ze/2KYS5pTM2wap3fk5sXzS1D3ybKIM8IUGYdt+F+n36jtSAbjD9JKPDJE9oVjyIYsPYuD7h7vtoTYVki0W7sgSzZeQRC6eXOaLtED+2zB1KS3giT+POZ+DdcsOwwd/bryCbLeUDyQT/J8Vpga3FjAAx6oh+pSVNd+lfQlaM+mMFrZN4y6yEqunMOY11isKrw92LojNNvwmpRZ9QY0QpHUvGUons95lopxwflmccwzTi6T181QNg+Y1P+Olg4SWxRn5o5FUj8cHQbZLYJaNwYGWLOpyo4ZtFf52oCyo50WMsPBuBYLjE3MKacudAGOp0BxSM7PdnzReTJyj2qwltf9vhpB+GWdGSrxoEwXAqZLNUCDSwjArWu0YeIBBvY2MYIK256cbSdIR8jKK24HG7mCo/ryJl5OVIiFTVHiheel0BxO6dEtyuUDJC+BhFHPgYvO5F043VMgwve6uV7vPSY96KRwc5jLFX8PM7RNDo/P205YDg1xIukQR5Mwx+xHfm1e73UY8OJ/o8IOjrCeA==",
+    "expiration": "2026-05-21T12:13:26.000Z"
+  },
+  "name": "ielts-mastery",
+  "path": "/home/ubuntu/ielts-mastery",
+  "port": 3000,
+  "secrets": {
+    "BUILT_IN_FORGE_API_KEY": "FWg2iHYiPYxBcFWS6vDxBe",
+    "BUILT_IN_FORGE_API_URL": "https://forge.manus.ai",
+    "JWT_SECRET": "8okFxEE9H3z6r9ZQRB2GRC",
+    "OAUTH_SERVER_URL": "https://api.manus.im",
+    "OWNER_NAME": "orthodontic clinic",
+    "OWNER_OPEN_ID": "4n4TKdjLP8JLUiLrX7kshg",
+    "VITE_ANALYTICS_ENDPOINT": "https://manus-analytics.com",
+    "VITE_ANALYTICS_WEBSITE_ID": "b0278454-6f89-48ae-bfe4-78f6107d96cc",
+    "VITE_APP_ID": "PXRteZYPVhgT7Fu6yMkmNR",
+    "VITE_APP_LOGO": "",
+    "VITE_APP_TITLE": "IELTS Mastery - English Learning Platform",
+    "VITE_FRONTEND_FORGE_API_KEY": "aaQcfirMWMWekJcV82s9TQ",
+    "VITE_FRONTEND_FORGE_API_URL": "https://forge.manus.ai",
+    "VITE_OAUTH_PORTAL_URL": "https://manus.im"
+  },
+  "template_id": "web-db-user",
+  "test_command": "pnpm test"
+}
