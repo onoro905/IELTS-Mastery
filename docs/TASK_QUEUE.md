@@ -3,19 +3,20 @@
 ## ACTIVE
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |
 |------|----------|------------|----------------|--------------|--------------------|
-| Agent Audit & Hardening | High | Medium | docs/*.md | None | Documentation updated with governance rules and pushed to repo. |
+| Reality Audit & Alignment | High | Low | docs/*.md | None | Documentation matches codebase reality. |
 
 ## BACKLOG
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |
 |------|----------|------------|----------------|--------------|--------------------|
-| Create User Settings Page | Medium | Medium | client/src/pages/Settings.tsx | Auth System | Settings page functional and connected to tRPC. |
-| Implement Active Recall Quiz | High | High | client/src/pages/Quiz.tsx | Vocabulary System | Quiz system with SRS logic fully operational. |
-| Implement Daily Smart Reviews | High | Medium | server/routers/vocabulary.ts | SRS Logic | Daily review list generated correctly for users. |
-| PDF Notes Generation | Low | Medium | server/_core/pdf.ts | None | Users can download PDF summaries of lessons. |
+| Connect Vocabulary UI Actions | High | Medium | client/src/pages/Vocabulary.tsx | tRPC Mutations | Save/Learned buttons update backend SRS state. |
+| Replace Mock AI in AITeacher | High | High | client/src/pages/AITeacher.tsx | LLM Integration | Real AI feedback returned from LLM service. |
+| Connect IELTS Tests to Backend | Medium | Medium | client/src/pages/IeltsTests.tsx | ielts Router | Tests load from DB and results are saved. |
+| Refine User Settings Page | Medium | Low | client/src/pages/Settings.tsx | None | Settings page UI polished and fully functional. |
+| Implement Leaderboard UI | Low | Medium | client/src/pages/Gamification.tsx | userProgress Router | Global rankings displayed to users. |
 
 ## QUICK WINS
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |
 |------|----------|------------|----------------|--------------|--------------------|
-| Fix typo in "القواعد" | High | Low | client/src/pages/Grammar.tsx | None | Correct spelling in the UI. |
+| Fix "القواعس" Typo | High | Low | client/src/pages/Dashboard.tsx | None | Correct spelling in Dashboard. |
+| Fix typo in "القواعد" (Grammar) | High | Low | client/src/pages/Grammar.tsx | None | Correct spelling in Grammar UI. |
 | Add favicon to index.html | Medium | Low | client/index.html | None | Favicon displayed in browser tab. |
-| Update README with live link | Low | Low | README.md | Deployment | Production URL added to README. |

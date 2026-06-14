@@ -21,3 +21,12 @@
 - Grammar Hub lessons and exercises.
 - Gamification (XP, Streaks).
 - Dev Login for local development.
+
+## [2026-06-14] - Reality Audit
+### Added
+- Created `docs/REALITY_AUDIT.md` with detailed verification of code vs documentation.
+
+### Changed
+- Updated `PROJECT_STATE.md` to reflect actual progress (AI Teacher and IELTS still in mock state).
+- Updated `TASK_QUEUE.md` to prioritize connecting UI to existing backend routers.
+- Moved "Create User Settings Page" to "Refine User Settings Page" as the file already exists.
