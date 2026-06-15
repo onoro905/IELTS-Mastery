@@ -4,6 +4,7 @@
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |
 |------|----------|------------|----------------|--------------|--------------------|
 | Reality Audit & Alignment | High | Low | docs/*.md | None | Documentation matches codebase reality. |
+| Vocabulary Backend Fix | High | Low | server/db.ts, server/routers.ts | None | Upsert logic implemented for word progress. |
 
 ## BACKLOG
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |

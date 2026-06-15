@@ -30,3 +30,10 @@
 - Updated `PROJECT_STATE.md` to reflect actual progress (AI Teacher and IELTS still in mock state).
 - Updated `TASK_QUEUE.md` to prioritize connecting UI to existing backend routers.
 - Moved "Create User Settings Page" to "Refine User Settings Page" as the file already exists.
+
+## [2026-06-15] - Vocabulary Backend Fix
+### Added
+- Implemented `upsertUserVocabularyProgress` in `server/db.ts` to handle both creation and updates of word progress.
+
+### Changed
+- Updated `vocabulary.updateProgress` mutation in `server/routers.ts` to use the new upsert helper, enabling first-time persistence for vocabulary interactions.

@@ -207,6 +207,46 @@ export async function getVocabularyForReview(userId: number) {
     .limit(10);
 }
 
+export async function upsertUserVocabularyProgress(
+  userId: number,
+  vocabularyId: number,
+  data: Partial<typeof userVocabularyProgress.$inferInsert>
+) {
+  const db = await getDb();
+  if (!db) return null;
+
+  const existing = await db
+    .select()
+    .from(userVocabularyProgress)
+    .where(
+      and(
+        eq(userVocabularyProgress.userId, userId),
+        eq(userVocabularyProgress.vocabularyId, vocabularyId)
+      )
+    )
+    .limit(1);
+
+  if (existing.length > 0) {
+    await db
+      .update(userVocabularyProgress)
+      .set(data)
+      .where(
+        and(
+          eq(userVocabularyProgress.userId, userId),
+          eq(userVocabularyProgress.vocabularyId, vocabularyId)
+        )
+      );
+  } else {
+    await db.insert(userVocabularyProgress).values({
+      userId,
+      vocabularyId,
+      ...data,
+    });
+  }
+
+  return true;
+}
+
 // Grammar Functions
 export async function getGrammarLessons(category?: string) {
   const db = await getDb();

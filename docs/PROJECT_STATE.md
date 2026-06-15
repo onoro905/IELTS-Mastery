@@ -7,12 +7,12 @@ Reality Audit & Correction Phase
 Reality Audit and Documentation Alignment
 
 ## Progress Summary
-The project has a solid architectural foundation with most backend routers and database schemas in place. However, the audit revealed that several core features (AI Teacher, IELTS Tests) are still using mock data in the frontend, and UI-to-Backend connectivity is incomplete for the Vocabulary SRS system.
+The project has a solid architectural foundation. A critical backend gap in the Vocabulary SRS system has been fixed by implementing an `upsert` mechanism, allowing for both creation and updates of word progress. Other core features (AI Teacher, IELTS Tests) still require frontend-to-backend connection and LLM integration.
 
 ## Open Issues
 - **AI Teacher**: Currently uses mock responses in frontend; LLM integration is pending.
 - **IELTS Tests**: Frontend is static; needs connection to tRPC `ielts` router.
-- **Vocabulary SRS**: UI buttons (Save/Learned) are not connected to backend mutations.
+- **Vocabulary UI**: Buttons are now supported by the backend but still need to be connected in the frontend.
 - **Gamification**: Frontend lacks leaderboard and badge unlocking logic.
 - **Typo**: "القواعس" instead of "القواعد" in Dashboard quick actions.
 

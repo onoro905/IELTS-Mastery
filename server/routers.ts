@@ -94,22 +94,12 @@ export const appRouter = router({
         })
       )
       .mutation(async ({ ctx, input }) => {
-        const db_instance = await db.getDb();
-        if (!db_instance) return null;
-
         const { vocabularyId, ...updateData } = input;
-        const updateDataTyped = updateData as any;
-
-        await db_instance
-          .update(userVocabularyProgress)
-          .set(updateDataTyped)
-          .where(
-            and(
-              eq(userVocabularyProgress.userId, ctx.user.id),
-              eq(userVocabularyProgress.vocabularyId, vocabularyId)
-            )
-          );
-
+        await db.upsertUserVocabularyProgress(
+          ctx.user.id,
+          vocabularyId,
+          updateData as any
+        );
         return { success: true };
       }),
   }),
