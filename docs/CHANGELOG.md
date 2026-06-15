@@ -37,3 +37,10 @@
 
 ### Changed
 - Updated `vocabulary.updateProgress` mutation in `server/routers.ts` to use the new upsert helper, enabling first-time persistence for vocabulary interactions.
+
+## [2026-06-15] - Vocabulary Frontend Integration
+### Changed
+- Connected "Save" and "Learned" buttons in `Vocabulary.tsx` to the `vocabulary.updateProgress` tRPC mutation.
+- Added success/error toast notifications using `sonner`.
+- Implemented loading states to prevent duplicate submissions during API requests.
+- Added automatic cache invalidation to ensure UI reflects the latest progress state.

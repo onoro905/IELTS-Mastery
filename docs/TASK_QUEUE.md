@@ -5,11 +5,11 @@
 |------|----------|------------|----------------|--------------|--------------------|
 | Reality Audit & Alignment | High | Low | docs/*.md | None | Documentation matches codebase reality. |
 | Vocabulary Backend Fix | High | Low | server/db.ts, server/routers.ts | None | Upsert logic implemented for word progress. |
+| Connect Vocabulary UI Actions | High | Medium | client/src/pages/Vocabulary.tsx | tRPC Mutations | Save/Learned buttons update backend SRS state. |
 
 ## BACKLOG
 | Task | Priority | Complexity | Files Affected | Dependencies | Definition of Done |
 |------|----------|------------|----------------|--------------|--------------------|
-| Connect Vocabulary UI Actions | High | Medium | client/src/pages/Vocabulary.tsx | tRPC Mutations | Save/Learned buttons update backend SRS state. |
 | Replace Mock AI in AITeacher | High | High | client/src/pages/AITeacher.tsx | LLM Integration | Real AI feedback returned from LLM service. |
 | Connect IELTS Tests to Backend | Medium | Medium | client/src/pages/IeltsTests.tsx | ielts Router | Tests load from DB and results are saved. |
 | Refine User Settings Page | Medium | Low | client/src/pages/Settings.tsx | None | Settings page UI polished and fully functional. |

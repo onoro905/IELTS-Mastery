@@ -16,6 +16,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -45,10 +46,22 @@ export default function Vocabulary() {
   const [currentWord, setCurrentWord] = useState<any>(null);
   const [isFlipped, setIsFlipped] = useState(false);
 
+  const utils = trpc.useUtils();
+
   const wordsQuery = trpc.vocabulary.list.useQuery(
     { difficulty: selectedDifficulty || 1, limit: 20 },
     { enabled: isAuthenticated }
   );
+
+  const updateProgressMutation = trpc.vocabulary.updateProgress.useMutation({
+    onSuccess: () => {
+      toast.success("تم تحديث التقدم بنجاح");
+      utils.vocabulary.userProgress.invalidate();
+    },
+    onError: (error) => {
+      toast.error(`خطأ: ${error.message}`);
+    },
+  });
 
   const searchQueryResults = trpc.vocabulary.search.useQuery(
     { query: searchQuery, limit: 10 },
@@ -194,6 +207,15 @@ export default function Vocabulary() {
                     variant="outline"
                     size="lg"
                     className="border-primary text-primary"
+                    disabled={updateProgressMutation.isPending}
+                    onClick={() => {
+                      if (currentWord) {
+                        updateProgressMutation.mutate({
+                          vocabularyId: currentWord.id,
+                          leitnerBox: 1,
+                        });
+                      }
+                    }}
                   >
                     <Heart className="w-5 h-5 mr-2" />
                     حفظ
@@ -259,7 +281,18 @@ export default function Vocabulary() {
                   </div>
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-primary to-secondary">
+                <Button 
+                  className="w-full bg-gradient-to-r from-primary to-secondary"
+                  disabled={updateProgressMutation.isPending}
+                  onClick={() => {
+                    if (currentWord) {
+                      updateProgressMutation.mutate({
+                        vocabularyId: currentWord.id,
+                        isLearned: true,
+                      });
+                    }
+                  }}
+                >
                   <CheckCircle2 className="w-4 h-4 mr-2" />
                   تم تعلم هذه الكلمة
                 </Button>
